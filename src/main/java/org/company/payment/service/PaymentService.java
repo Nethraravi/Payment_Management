@@ -10,6 +10,13 @@ import org.company.payment.entity.User;
 import org.company.payment.enums.Role;
 import org.company.payment.exception.PaymentNotFoundException;
 import org.company.payment.repository.PaymentRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -26,6 +33,9 @@ import java.util.UUID;
 public class PaymentService {
 
     private final PaymentRepository paymentRepository;
+
+    private static final Path UPLOAD_DIRECTORY = Paths.get("C:\\Users\\nethra.r\\IdeaProjects\\payment-management\\uploads");
+    private static final Logger logger = LoggerFactory.getLogger(PaymentService.class);
 
     @Transactional  //--> used for rest api
     public PaymentResponseDTO createPayment(PaymentRequestDTO requestDTO)
@@ -46,16 +56,20 @@ public class PaymentService {
             {
                 String fileName=receipt.getOriginalFilename();
                 uniqueFileName = UUID.randomUUID() + "_" + fileName;
-                Path uploadPath = Paths.get("uploads");
+                Path uploadPath = UPLOAD_DIRECTORY;
                 if (!Files.exists(uploadPath))
                 {
                     Files.createDirectories(uploadPath);
                 }
                 Path filePath = uploadPath.resolve(uniqueFileName);
                 receipt.transferTo(filePath.toFile());
+                logger.info("Receipt '{}' uploaded successfully as '{}'",
+                        fileName,
+                        uniqueFileName);
             }
             catch (IOException e)
             {
+                logger.error("Failed to upload receipt '{}'", receipt.getOriginalFilename(), e);
                 throw new RuntimeException("Failed to upload receipt.", e);
             }
         }
@@ -63,6 +77,7 @@ public class PaymentService {
         payment.setReceiptPath(uniqueFileName);
         payment.setCreatedBy(loggedInUser);
         Payment savedPayment = paymentRepository.savePayment(payment);
+        logger.info("Payment {} created successfully", payment.getId());
         return convertToResponseDTO(savedPayment);
     }
 
@@ -113,6 +128,7 @@ public class PaymentService {
         payment.setPaymentMethod(requestDTO.getPaymentMethod());
         payment.setStatus(requestDTO.getStatus());
 
+        logger.info("Payment {} updated successfully", payment.getId());
         return convertToResponseDTO(payment);
     }
 
@@ -136,6 +152,47 @@ public class PaymentService {
             throw new PaymentNotFoundException("Payment not found with id: "+id);
         }
 
+        logger.info("Payment {} deleted successfully", payment.getId());
         paymentRepository.deletePayment(payment);
+    }
+
+    public ResponseEntity<Resource> viewReceipt(Long id)
+    {
+        Payment payment = paymentRepository.findPaymentById(id);
+
+        if (payment == null)
+        {
+            throw new PaymentNotFoundException("Payment not found with id: " + id);
+        }
+
+        if (payment.getReceiptPath() == null || payment.getReceiptPath().isBlank())
+        {
+            throw new RuntimeException("Receipt not found.");
+        }
+
+        try
+        {
+            System.out.println("Receipt Path in DB: " + payment.getReceiptPath());
+            Path filePath = UPLOAD_DIRECTORY.resolve(payment.getReceiptPath());
+
+            System.out.println("Absolute Path: " + filePath.toAbsolutePath());
+            System.out.println("Exists: " + Files.exists(filePath));
+            Resource resource = new UrlResource(filePath.toUri());
+
+            if (!resource.exists())
+            {
+                throw new RuntimeException("Receipt file not found.");
+            }
+
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_PDF)
+                    .header(HttpHeaders.CONTENT_DISPOSITION,
+                            "inline; filename=\"" + payment.getReceiptPath() + "\"")
+                    .body(resource);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("Unable to read receipt.", e);
+        }
     }
 }

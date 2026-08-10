@@ -1,0 +1,35 @@
+2026-08-09 13:58:31 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-09 13:59:03 INFO  o.c.payment.service.PaymentService - Receipt 'PaymentReceipt.pdf' uploaded successfully as 'eefcad23-4dda-4e0e-8ce7-59a3f90e60e5_PaymentReceipt.pdf'
+2026-08-09 13:59:03 INFO  o.c.payment.service.PaymentService - Payment 28 updated successfully
+2026-08-09 14:01:45 INFO  o.c.payment.service.PaymentService - Payment 23 deleted successfully
+2026-08-09 14:03:08 INFO  o.c.payment.service.UserService - Administrator 'John07' ENABLED user 'Alice16'.
+2026-08-09 14:03:30 INFO  o.c.payment.service.UserService - Administrator 'John07' DISABLED user 'David03'.
+2026-08-09 14:03:59 INFO  o.c.payment.service.UserService - Administrator 'John07' updated user 'Alice01' successfully.
+2026-08-09 14:06:18 WARN  o.c.p.controller.LoginController - Unauthorized access attempt by user 'John07' to User Management.
+2026-08-09 14:26:07 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-09 14:26:19 WARN  o.c.p.controller.LoginController - Unauthorized access attempt by user 'John07' to User Management.
+2026-08-09 14:30:05 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-09 14:30:28 INFO  o.c.payment.service.PaymentService - Payment 2 updated successfully
+2026-08-09 14:30:39 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-09 14:30:55 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-09 14:31:23 INFO  o.c.payment.service.PaymentService - Receipt 'PaymentReceipt.pdf' uploaded successfully as '7380614e-5fcc-4e19-bddc-f7f4a9339c06_PaymentReceipt.pdf'
+2026-08-09 14:31:23 INFO  o.c.payment.service.PaymentService - Payment 29 updated successfully
+2026-08-09 14:33:59 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-09 14:35:17 INFO  o.c.payment.service.PaymentService - Payment 30 created successfully
+2026-08-10 09:41:23 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 09:42:11 INFO  o.c.payment.service.PaymentService - Receipt 'PaymentReceipt.pdf' uploaded successfully as '1fbc6cc7-a594-43d3-9f97-353d94718ec4_PaymentReceipt.pdf'
+2026-08-10 09:42:11 INFO  o.c.payment.service.PaymentService - Payment 31 created successfully
+2026-08-10 09:45:30 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Mathew07' with role USER.
+2026-08-10 10:07:32 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 10:09:17 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Alex08' with role USER.
+2026-08-10 10:15:10 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 10:17:08 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Freny11' with role USER.
+2026-08-10 10:21:22 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 10:22:34 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Mustafa12' with role USER.
+2026-08-10 10:40:44 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 10:43:32 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Merry06' with role USER.
+2026-08-10 10:45:37 INFO  o.c.payment.service.UserService - Administrator 'John07' updated user 'Mathew07' successfully.
+2026-08-10 10:45:50 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-10 10:46:02 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-10 10:46:36 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Merry06' successfully.
+2026-08-10 11:28:36 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.

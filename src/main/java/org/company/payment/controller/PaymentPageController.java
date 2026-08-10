@@ -10,6 +10,7 @@ import org.company.payment.enums.Role;
 import org.company.payment.exception.AccessDeniedException;
 import org.company.payment.service.PaymentService;
 import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -49,7 +50,7 @@ public class PaymentPageController {
     }
 
     @GetMapping("/payments-page/receipt/{id}")
-    public ResponseEntity<Resource> viewReceipt(@PathVariable Long id)
+    public ResponseEntity<Resource> viewReceipt(@PathVariable("id") Long id)
     {
         return paymentService.viewReceipt(id);
     }

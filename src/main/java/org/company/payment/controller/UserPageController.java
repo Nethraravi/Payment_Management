@@ -79,7 +79,7 @@ public class UserPageController {
         {
             throw new AccessDeniedException("Access denied. Only administrators can manage users.");
         }
-        userService.createUser(requestDTO);
+        userService.createUser(requestDTO, loggedInUser);
         return "redirect:/users-page?success=update";
     }
 
@@ -98,7 +98,7 @@ public class UserPageController {
             throw new AccessDeniedException("Access denied. Only administrators can manage users.");
         }
 
-        model.addAttribute("user", userService.getUserById(id));
+        model.addAttribute("user", userService.getUserById(id, loggedInUser));
         return "edit-user";
     }
 

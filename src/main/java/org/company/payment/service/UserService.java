@@ -6,6 +6,8 @@ import org.company.payment.dto.UserResponseDTO;
 import org.company.payment.entity.User;
 import org.company.payment.exception.InvalidOperationException;
 import org.company.payment.repository.UserRepository;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -16,6 +18,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public User login(String username, String password)
     {
@@ -30,7 +33,7 @@ public class UserService {
     }
 
     @Transactional
-    public void createUser(UserRequestDTO requestDTO)
+    public void createUser(UserRequestDTO requestDTO, User loggedInUser)
     {
         User existingUser = userRepository.findByUsername(requestDTO.getUsername());
         if(existingUser != null)
@@ -44,9 +47,8 @@ public class UserService {
         user.setFullName(requestDTO.getFullName());
         user.setRole(requestDTO.getRole());
         user.setEnabled(true);
-        user.setCreatedAt(LocalDateTime.now());
-
         userRepository.save(user);
+        logger.info("Administrator '{}' created user '{}' with role {}.", loggedInUser.getUsername(), user.getUsername(), user.getRole());
     }
 
     public List<UserResponseDTO> getAllUsers()
@@ -59,12 +61,13 @@ public class UserService {
         return new UserResponseDTO(user.getId(),user.getUsername(),user.getFullName(),user.getRole(),user.getEnabled(),user.getCreatedAt());
     }
 
-    public UserRequestDTO getUserById(Long id)
+    public UserRequestDTO getUserById(Long id, User loggedInUser)
     {
         User user = userRepository.findById(id);
 
         if(user == null)
         {
+            logger.warn("Administrator '{}' attempted to access non-existing user with id {}.",loggedInUser.getUsername(), id);
             throw new RuntimeException("User not found");
         }
 
@@ -83,11 +86,13 @@ public class UserService {
 
         if(user == null)
         {
+            logger.warn("Administrator '{}' attempted to change their own role.", loggedInUser.getUsername());
             throw new RuntimeException("User not found");
         }
 
         if(loggedInUser.getId().equals(id) && loggedInUser.getRole() != requestDTO.getRole())
         {
+            logger.warn("Administrator '{}' attempted to update non-existing user with id {}.", loggedInUser.getUsername(), id);
             throw new InvalidOperationException("You cannot change your own role.");
         }
 
@@ -99,6 +104,7 @@ public class UserService {
         {
             user.setPassword(requestDTO.getPassword());
         }
+        logger.info("Administrator '{}' updated user '{}' successfully.", loggedInUser.getUsername(), user.getUsername());
     }
 
     @Transactional
@@ -113,9 +119,11 @@ public class UserService {
 
         if(loggedInUser.getId().equals(id))
         {
+            logger.warn("Administrator '{}' attempted to disable their own account.", loggedInUser.getUsername());
             throw new InvalidOperationException("You cannot disable your own account.");
         }
 
         user.setEnabled(!user.getEnabled());
+        logger.info("Administrator '{}' {} user '{}'.", loggedInUser.getUsername(), user.getEnabled() ? "ENABLED" : "DISABLED", user.getUsername());
     }
 }
