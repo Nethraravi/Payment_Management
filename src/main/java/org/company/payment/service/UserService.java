@@ -56,6 +56,11 @@ public class UserService {
         return userRepository.findAll().stream().map(this::convertToResponseDTO).toList();
     }
 
+    public long totalUsers()
+    {
+        return userRepository.totalUsers();
+    }
+
     private UserResponseDTO convertToResponseDTO(User user)
     {
         return new UserResponseDTO(user.getId(),user.getUsername(),user.getFullName(),user.getRole(),user.getEnabled(),user.getCreatedAt());

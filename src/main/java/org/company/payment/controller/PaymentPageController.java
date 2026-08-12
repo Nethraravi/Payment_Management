@@ -1,5 +1,6 @@
 package org.company.payment.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -9,15 +10,16 @@ import org.company.payment.entity.User;
 import org.company.payment.enums.Role;
 import org.company.payment.exception.AccessDeniedException;
 import org.company.payment.service.PaymentService;
+import org.company.payment.validation.OnCreate;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
@@ -37,7 +39,7 @@ public class PaymentPageController {
     }
 
     @GetMapping("/payments-page")
-    public String showPaymentsPage(@RequestParam(name="success", required = false) String success, Model model, HttpSession session)
+    public String showPaymentsPage(@RequestParam(name="success", required = false) String success, Model model, HttpSession session, HttpServletResponse response)
     {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
         model.addAttribute("payments", paymentService.getAllPayments(loggedInUser));
@@ -56,21 +58,26 @@ public class PaymentPageController {
     }
 
     @GetMapping("/payments-page/edit/{id}")
-    public String showEditPaymentPage(@PathVariable("id") Long id, Model model, HttpSession session)
+    public String showEditPaymentPage(@PathVariable("id") Long id, Model model, HttpSession session, HttpServletResponse response)
     {
         checkAdmin(session);
         PaymentResponseDTO payment = paymentService.getPaymentById(id);
         model.addAttribute("payment", payment);
+        model.addAttribute("paymentId", id);
+        System.out.println("DEBUG paymentId = "+id);
         return "edit-payment";
     }
 
     @PostMapping("/payments-page/edit/{id}")
     public String updatePayment(@PathVariable("id") Long id, @Valid @ModelAttribute("payment") PaymentRequestDTO requestDTO, BindingResult bindingResult, Model model, HttpSession session)
     {
+        System.out.println("DEBUG: updatePayment() called, id = " + id);
+        System.out.println("DEBUG validation errors = " + bindingResult.getFieldErrors());
         checkAdmin(session);
         if(bindingResult.hasErrors())
         {
             model.addAttribute("payment", requestDTO);
+            model.addAttribute("paymentId", id);
             model.addAttribute("errors",bindingResult.getFieldErrors().stream().collect(Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage, (existing, replacement) -> existing)));
             return "edit-payment";
         }
@@ -89,13 +96,12 @@ public class PaymentPageController {
     @GetMapping("/payments-page/create")
     public String showCreatePaymentPage(Model model)
     {
-        //checkAdmin(session);
         model.addAttribute("payment", new PaymentRequestDTO());
         return "create-payment";
     }
 
     @PostMapping("/payments-page/create")
-    public String createPayment(@Valid @ModelAttribute("payment") PaymentRequestDTO requestDTO, BindingResult bindingResult, Model model, HttpSession session)
+    public String createPayment(@Validated(OnCreate.class) @ModelAttribute("payment") PaymentRequestDTO requestDTO, BindingResult bindingResult, Model model, HttpSession session)
     {
         if(bindingResult.hasErrors())
         {

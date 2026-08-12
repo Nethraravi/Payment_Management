@@ -33,3 +33,160 @@
 2026-08-10 10:46:02 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
 2026-08-10 10:46:36 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Merry06' successfully.
 2026-08-10 11:28:36 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 11:52:12 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'John07'.
+2026-08-10 11:52:20 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 11:53:03 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-10 11:53:11 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'David03'.
+2026-08-10 12:01:11 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 12:02:10 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'TestUser01' with role USER.
+2026-08-10 12:08:04 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-10 12:09:51 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Alex08' successfully.
+2026-08-10 12:15:07 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'TestUser01' successfully.
+2026-08-10 12:17:29 WARN  o.c.payment.service.UserService - Administrator 'Mathew07' attempted to update non-existing user with id 6.
+2026-08-10 12:17:45 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Mathew07' successfully.
+2026-08-10 12:17:53 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Mathew07' successfully.
+2026-08-10 12:21:25 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' DISABLED user 'Bob02'.
+2026-08-10 12:22:47 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged out successfully.
+2026-08-10 12:23:05 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Bob02'.
+2026-08-10 12:27:01 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 12:27:19 INFO  o.c.payment.service.PaymentService - Receipt 'PaymentReceipt.pdf' uploaded successfully as 'f93be94d-52c4-44a8-b4d8-cc344a32ddd2_PaymentReceipt.pdf'
+2026-08-10 12:27:19 INFO  o.c.payment.service.PaymentService - Payment 32 created successfully
+2026-08-10 12:42:07 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-10 12:42:13 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-10 14:16:15 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 14:17:44 INFO  o.c.payment.service.PaymentService - Payment 7 updated successfully
+2026-08-10 14:51:42 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 15:12:25 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 15:25:18 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 15:53:27 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 16:22:00 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 16:24:26 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 16:36:07 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-10 17:28:15 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 08:48:18 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 08:55:48 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 09:03:21 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 09:03:35 INFO  o.c.payment.service.PaymentService - Payment 7 updated successfully
+2026-08-11 09:11:42 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 09:22:41 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 09:22:46 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 09:28:52 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 09:29:50 INFO  o.c.payment.service.PaymentService - Payment 13 updated successfully
+2026-08-11 09:30:08 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 09:31:52 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 09:32:07 INFO  o.c.payment.service.PaymentService - Payment 7 updated successfully
+2026-08-11 09:32:12 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 09:48:08 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 09:48:17 INFO  o.c.payment.service.PaymentService - Payment 5 updated successfully
+2026-08-11 09:48:30 INFO  o.c.payment.service.PaymentService - Payment 11 updated successfully
+2026-08-11 09:48:40 INFO  o.c.payment.service.PaymentService - Payment 7 updated successfully
+2026-08-11 09:48:46 INFO  o.c.payment.service.PaymentService - Payment 6 updated successfully
+2026-08-11 09:49:09 INFO  o.c.payment.service.PaymentService - Payment 14 updated successfully
+2026-08-11 09:49:18 INFO  o.c.payment.service.PaymentService - Payment 16 updated successfully
+2026-08-11 09:49:35 INFO  o.c.payment.service.PaymentService - Payment 20 updated successfully
+2026-08-11 09:49:53 INFO  o.c.payment.service.PaymentService - Payment 28 updated successfully
+2026-08-11 09:50:05 INFO  o.c.payment.service.PaymentService - Payment 31 updated successfully
+2026-08-11 10:11:24 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:40 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:40 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:40 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:40 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:41 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:16:42 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:19:05 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 10:19:09 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 10:19:28 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'John07'.
+2026-08-11 10:19:37 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 11:09:46 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 11:09:46 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 11:45:23 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 11:46:15 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 11:46:26 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 11:54:34 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 12:08:28 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 12:08:52 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 12:14:36 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 12:18:04 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 12:27:39 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 12:27:55 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 13:57:27 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 13:59:48 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:08:12 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:28:26 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:39:34 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:47:40 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'John07'.
+2026-08-11 14:47:51 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:55:26 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:57:35 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 14:58:34 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 15:11:18 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 15:13:00 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 15:19:47 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 15:21:23 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 15:21:53 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 15:22:05 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 15:48:17 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:25:32 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 16:25:43 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 16:25:55 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:28:21 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:30:04 INFO  o.c.p.controller.LoginController - User 'Alex08' logged in successfully.
+2026-08-11 16:30:46 INFO  o.c.p.controller.LoginController - User 'Alex08' logged out successfully.
+2026-08-11 16:30:53 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:43:46 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 16:44:49 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged out successfully.
+2026-08-11 16:45:02 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:47:27 INFO  o.c.p.controller.LoginController - User 'Alice01' logged out successfully.
+2026-08-11 16:47:39 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Bob02'.
+2026-08-11 16:48:35 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 16:51:52 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 16:52:58 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-11 16:53:12 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-11 16:54:34 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 16:54:58 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-11 16:55:06 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-11 16:57:31 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 16:58:07 INFO  o.c.payment.service.PaymentService - Payment 5 updated successfully
+2026-08-11 16:58:08 INFO  o.c.payment.service.PaymentService - Payment 5 updated successfully
+2026-08-11 16:59:11 INFO  o.c.payment.service.UserService - Administrator 'John07' updated user 'John07' successfully.
+2026-08-11 16:59:19 INFO  o.c.payment.service.UserService - Administrator 'John07' updated user 'John07' successfully.
+2026-08-11 17:01:43 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 17:02:25 INFO  o.c.payment.service.PaymentService - Receipt 'PaymentReceipt.pdf' uploaded successfully as '08a5a67b-0792-45b3-99a0-d47e1678b2c5_PaymentReceipt.pdf'
+2026-08-11 17:02:26 INFO  o.c.payment.service.PaymentService - Payment 33 created successfully
+2026-08-11 17:05:20 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-11 17:07:04 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' created user 'Aaharam04' with role USER.
+2026-08-11 17:07:34 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' updated user 'Aaharam05' successfully.
+2026-08-11 17:07:42 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' DISABLED user 'Alice01'.
+2026-08-11 17:07:45 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' ENABLED user 'Alice01'.
+2026-08-11 17:18:11 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-11 17:18:17 INFO  o.c.payment.service.PaymentService - Payment 1 updated successfully
+2026-08-11 17:20:18 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-11 17:21:06 INFO  o.c.payment.service.PaymentService - Payment 6 updated successfully
+2026-08-12 09:25:58 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-12 09:43:43 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-12 09:50:51 INFO  o.c.p.controller.LoginController - User 'John07' logged out successfully.
+2026-08-12 10:03:08 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Christofer'.
+2026-08-12 10:05:29 INFO  o.c.p.controller.LoginController - User 'Freny11' logged in successfully.
+2026-08-12 10:05:51 INFO  o.c.payment.service.PaymentService - Payment 34 created successfully
+2026-08-12 10:06:07 INFO  o.c.payment.service.PaymentService - Payment 35 created successfully
+2026-08-12 10:06:19 INFO  o.c.payment.service.PaymentService - Payment 36 created successfully
+2026-08-12 10:06:50 INFO  o.c.p.controller.LoginController - User 'Freny11' logged out successfully.
+2026-08-12 10:26:10 INFO  o.c.p.controller.LoginController - User 'Merry06' logged in successfully.
+2026-08-12 10:26:35 INFO  o.c.payment.service.PaymentService - Payment 37 created successfully
+2026-08-12 10:26:59 INFO  o.c.payment.service.PaymentService - Payment 38 created successfully
+2026-08-12 10:27:20 INFO  o.c.payment.service.PaymentService - Payment 39 created successfully
+2026-08-12 10:27:35 INFO  o.c.p.controller.LoginController - User 'Merry06' logged out successfully.
+2026-08-12 10:43:36 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-12 11:08:40 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Aaharam04'.
+2026-08-12 11:08:56 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Aaharam04'.
+2026-08-12 11:09:08 INFO  o.c.p.controller.LoginController - User 'Aaharam05' logged in successfully.
+2026-08-12 11:09:42 INFO  o.c.payment.service.PaymentService - Payment 40 created successfully
+2026-08-12 11:10:11 INFO  o.c.payment.service.PaymentService - Payment 41 created successfully
+2026-08-12 11:10:30 INFO  o.c.payment.service.PaymentService - Payment 42 created successfully
+2026-08-12 11:14:56 INFO  o.c.p.controller.LoginController - User 'Merry06' logged in successfully.
+2026-08-12 11:40:17 WARN  o.c.p.controller.LoginController - Failed login attempt for username 'Alice16'.
+2026-08-12 11:40:30 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-12 11:48:07 INFO  o.c.p.controller.LoginController - User 'Alice01' logged in successfully.
+2026-08-12 11:48:36 INFO  o.c.p.controller.LoginController - User 'Alice01' logged out successfully.
+2026-08-12 12:25:59 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-12 14:32:04 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.

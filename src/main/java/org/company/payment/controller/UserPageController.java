@@ -38,11 +38,12 @@ public class UserPageController {
         }
 
         User loggedInUser = (User) session.getAttribute("loggedInUser");
-        if(loggedInUser.getRole()!= Role.ADMIN)
+        if(loggedInUser == null)
         {
-            throw new AccessDeniedException("Access denied. Only administrators can manage users.");
+            return "redirect:/login";
         }
 
+        model.addAttribute("role", loggedInUser.getRole());
         List<UserResponseDTO> users = userService.getAllUsers();
         model.addAttribute("users", users);
 
@@ -55,6 +56,10 @@ public class UserPageController {
         //Role role = (Role) session.getAttribute("role");
 
         User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if(loggedInUser == null)
+        {
+            return "redirect:/login";
+        }
         if(loggedInUser.getRole()!= Role.ADMIN)
         {
             throw new AccessDeniedException("Access denied. Only administrators can manage users.");

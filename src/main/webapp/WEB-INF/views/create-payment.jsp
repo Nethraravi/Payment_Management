@@ -4,62 +4,476 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Payment</title>
+
+    <title>Create Payment - Payment Management</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+        /* Header */
+
+        header {
+            height: 70px;
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu-btn {
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #374151;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        /* Side Menu */
+
+        .side-menu {
+            position: fixed;
+            top: 70px;
+            left: -260px;
+            width: 260px;
+            height: calc(100vh - 70px);
+            background: white;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.08);
+            transition: left 0.25s ease;
+            padding: 25px 0;
+            z-index: 1000;
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px 30px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .side-menu a:hover {
+            background: #f3f4f6;
+            color: #2563eb;
+        }
+
+        .side-menu .logout {
+            margin-top: 15px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+            color: #dc2626;
+        }
+
+        /* Main */
+
+        .container {
+            padding: 40px 50px;
+            margin-left: 0;
+            transition: margin-left 0.25s ease;
+        }
+
+        .container.menu-open {
+            margin-left: 260px;
+        }
+
+        .page-header {
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: #6b7280;
+            font-size: 15px;
+        }
+
+        /* Form Card */
+
+        .form-card {
+            max-width: 650px;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input[type="number"],
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            color: #1f2937;
+        }
+
+        .form-group input[type="number"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* File Upload */
+
+        .file-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .file-input:hover {
+            background: #f1f5f9;
+        }
+
+        .form-hint {
+            margin-top: 6px;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        /* Validation Errors */
+
+        .field-error {
+            display: block;
+            margin-top: 6px;
+            color: #dc2626;
+            font-size: 13px;
+        }
+
+        /* Buttons */
+
+        .button-container {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .create-btn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .create-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .cancel-btn {
+            display: inline-block;
+            background: #f3f4f6;
+            color: #374151;
+            padding: 11px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .cancel-btn:hover {
+            background: #e5e7eb;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 800px) {
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .container.menu-open {
+                margin-left: 0;
+            }
+
+            .form-card {
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-    <h1>Create Payment</h1>
-    <form action="${pageContext.request.contextPath}/payments-page/create" method="post" enctype="multipart/form-data">
-        <label>Amount:</label>
-        <input type="number" name="amount" step="0.01" required>
 
-        <br>
 
-        <c:if test="${not empty errors.amount}">
-            <span style="color:red;">
-                ${errors.amount}
-            </span>
-        </c:if>
+<header>
 
-        <br><br>
-        <label>Payment Method:</label>
-        <select name="paymentMethod" required>
-            <option value="">-- Select Payment Method --</option>
-            <option value="UPI">UPI</option>
-            <option value="CARD">CARD</option>
-            <option value="NET_BANKING">Net Banking</option>
-        </select>
-        <c:if test="${not empty errors.paymentMethod}">
-             <span style="color:red;">
-                  ${errors.paymentMethod}
-             </span>
-        </c:if>
-        <br><br>
-        <label>Status:</label>
-        <select name="status" required>
-            <option value="">-- Select Status --</option>
-            <option value="SUCCESS">Success</option>
-            <option value="PENDING">Pending</option>
-            <option value="FAILED">Failed</option>
-        </select>
-        <br><br>
-        <c:if test="${not empty errors.status}">
-            <span style="color:red;">
-                 ${errors.status}
-            </span>
-        </c:if>
+    <button class="menu-btn"
+            type="button"
+            onclick="toggleMenu()">
+        ☰
+    </button>
 
-        <label>Receipt:</label>
-        <input type="file" name="receipt">
+    <div class="logo">
+        Payment Management
+    </div>
 
-        <button type="submit">Create Payment</button>
+</header>
 
-    </form>
 
-    <br>
+<!-- Hamburger Menu -->
+
+<nav id="sideMenu" class="side-menu">
 
     <a href="${pageContext.request.contextPath}/payments-page">
-        <button type="button">Back to payments</button>
+        Payments
     </a>
+
+    <a href="${pageContext.request.contextPath}/users-page">
+        Users
+    </a>
+
+    <a class="logout"
+       href="${pageContext.request.contextPath}/logout">
+        Logout
+    </a>
+
+</nav>
+
+
+<!-- Main Content -->
+
+<main id="mainContent" class="container">
+
+
+    <section class="page-header">
+
+        <h1>Create Payment</h1>
+
+        <p>
+            Enter the details below to create a new payment transaction.
+        </p>
+
+    </section>
+
+
+    <div class="form-card">
+
+        <form action="${pageContext.request.contextPath}/payments-page/create"
+              method="post"
+              enctype="multipart/form-data">
+
+
+            <!-- Amount -->
+
+            <div class="form-group">
+
+                <label for="amount">
+                    Amount
+                </label>
+
+                <input type="number" id="amount" name="amount" step="0.01" min="0.01" required>
+                <c:if test="${not empty errors.amount}">
+
+                    <span class="field-error">
+                        ${errors.amount}
+                    </span>
+                </c:if>
+
+            </div>
+
+
+            <!-- Payment Method -->
+
+            <div class="form-group">
+
+                <label for="paymentMethod">
+                    Payment Method
+                </label>
+
+                <select id="paymentMethod"
+                        name="paymentMethod"
+                        required>
+
+                    <option value="">
+                        -- Select Payment Method --
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="CARD">
+                        Card
+                    </option>
+
+                    <option value="NET_BANKING">
+                        Net Banking
+                    </option>
+
+                </select>
+
+
+                <c:if test="${not empty errors.paymentMethod}">
+
+                    <span class="field-error">
+                        ${errors.paymentMethod}
+                    </span>
+
+                </c:if>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="form-group">
+
+                <label for="status">
+                    Status
+                </label>
+
+                <select id="status"
+                        name="status"
+                        required>
+
+                    <option value="">
+                        -- Select Status --
+                    </option>
+
+                    <option value="SUCCESS">
+                        Success
+                    </option>
+
+                    <option value="PENDING">
+                        Pending
+                    </option>
+
+                    <option value="FAILED">
+                        Failed
+                    </option>
+
+                </select>
+
+
+                <c:if test="${not empty errors.status}">
+
+                    <span class="field-error">
+                        ${errors.status}
+                    </span>
+
+                </c:if>
+
+            </div>
+
+
+            <!-- Receipt -->
+
+            <div class="form-group">
+
+                <label for="receipt">
+                    Receipt
+                </label>
+
+                <input class="file-input"
+                       type="file"
+                       id="receipt"
+                       name="receipt">
+
+                <p class="form-hint">
+                    Upload the payment receipt if available.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="button-container">
+
+                <button class="create-btn"
+                        type="submit">
+
+                    Create Payment
+
+                </button>
+
+
+                <a class="cancel-btn"
+                   href="${pageContext.request.contextPath}/payments-page">
+
+                    Cancel
+
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("sideMenu");
+
+        const container = document.getElementById("mainContent");
+
+        menu.classList.toggle("open");
+
+        container.classList.toggle("menu-open");
+
+    }
+
+</script>
+
 
 </body>
 </html>

@@ -89,6 +89,46 @@ public class PaymentService {
                 .toList();
     }
 
+    public long countAllPayments()
+    {
+        return paymentRepository.countAllPayments();
+    }
+
+    public long countSuccessfulPayments()
+    {
+        return paymentRepository.countSuccessfulPayments();
+    }
+
+    public long countPendingPayments()
+    {
+        return paymentRepository.countPendingPayments();
+    }
+
+    public long countFailedPayments()
+    {
+        return paymentRepository.countFailedPayments();
+    }
+
+    public long countPaymentsByUser(User user)
+    {
+        return paymentRepository.countPaymentsByUser(user);
+    }
+
+    public long countSuccessfulPaymentsByUsers(User user)
+    {
+        return paymentRepository.countSuccessfulPaymentsByUser(user);
+    }
+
+    public long countPendingPaymentsByUsers(User user)
+    {
+        return paymentRepository.countPendingPaymentsByUser(user);
+    }
+
+    public long countFailedPaymentsByUsers(User user)
+    {
+        return paymentRepository.countFailedPaymentsByUser(user);
+    }
+
     public List<PaymentResponseDTO> getAllPayments(User loggedInUSer) // --> used for jsp (PaymentPageController)
     {
         List<Payment> payments;
@@ -124,8 +164,13 @@ public class PaymentService {
         {
             throw new RuntimeException("Payment not found with id: "+id);
         }
-        payment.setAmount(requestDTO.getAmount());
-        payment.setPaymentMethod(requestDTO.getPaymentMethod());
+
+        if(!"PENDING".equals(payment.getStatus().toString()))
+        {
+            throw new RuntimeException("Payment status cannot be changed once it is " +payment.getStatus());
+        }
+        //payment.setAmount(requestDTO.getAmount());
+        //payment.setPaymentMethod(requestDTO.getPaymentMethod());
         payment.setStatus(requestDTO.getStatus());
 
         logger.info("Payment {} updated successfully", payment.getId());

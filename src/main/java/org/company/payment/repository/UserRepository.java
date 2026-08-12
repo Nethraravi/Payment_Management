@@ -2,9 +2,6 @@ package org.company.payment.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
-import org.company.payment.dto.UserRequestDTO;
-import org.company.payment.dto.UserResponseDTO;
 import org.company.payment.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +25,11 @@ public class UserRepository {
     public List<User> findAll()
     {
         return entityManager.createQuery("FROM User", User.class).getResultList();
+    }
+
+    public long totalUsers()
+    {
+        return entityManager.createQuery("SELECT COUNT(u) FROM User u",Long.class).getSingleResult();
     }
 
     public void save(User user) {
