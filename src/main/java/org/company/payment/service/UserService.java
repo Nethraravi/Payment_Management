@@ -18,6 +18,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final EmailService emailService;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public User login(String username, String password)
@@ -28,7 +29,6 @@ public class UserService {
         {
             throw new RuntimeException("Invalid username or password");
         }
-
         return user;
     }
 
@@ -49,6 +49,7 @@ public class UserService {
         user.setEnabled(true);
         userRepository.save(user);
         logger.info("Administrator '{}' created user '{}' with role {}.", loggedInUser.getUsername(), user.getUsername(), user.getRole());
+        emailService.sendUserCreatedEmail(user, loggedInUser);
     }
 
     public List<UserResponseDTO> getAllUsers()
@@ -130,5 +131,6 @@ public class UserService {
 
         user.setEnabled(!user.getEnabled());
         logger.info("Administrator '{}' {} user '{}'.", loggedInUser.getUsername(), user.getEnabled() ? "ENABLED" : "DISABLED", user.getUsername());
+        emailService.sendUserStatusChangedEmail(user, loggedInUser);
     }
 }

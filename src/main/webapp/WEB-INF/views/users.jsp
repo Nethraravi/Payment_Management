@@ -218,6 +218,16 @@
             }
         }
 
+        .error-message {
+            background: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
     </style>
 
 </head>
@@ -281,8 +291,13 @@
                   + Create User
             </a>
         </c:if>
-
     </section>
+
+<c:if test="${not empty errorMessage}">
+    <div class="error-message">
+        ${errorMessage}
+    </div>
+</c:if>
 
     <!-- Users Table -->
     <div class="table-card">

@@ -190,3 +190,86 @@
 2026-08-12 11:48:36 INFO  o.c.p.controller.LoginController - User 'Alice01' logged out successfully.
 2026-08-12 12:25:59 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
 2026-08-12 14:32:04 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 10:50:38 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 10:51:53 INFO  o.c.payment.service.UserService - Administrator 'John07' created user 'Aathirai001' with role USER.
+2026-08-13 12:04:01 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-13 12:04:20 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' DISABLED user 'Alex08'.
+2026-08-13 12:04:59 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' ENABLED user 'Alex08'.
+2026-08-13 12:05:19 WARN  o.c.payment.service.UserService - Administrator 'Mathew07' attempted to disable their own account.
+2026-08-13 12:05:27 WARN  o.c.payment.service.UserService - Administrator 'Mathew07' attempted to disable their own account.
+2026-08-13 12:05:42 WARN  o.c.payment.service.UserService - Administrator 'Mathew07' attempted to disable their own account.
+2026-08-13 12:05:47 WARN  o.c.payment.service.UserService - Administrator 'Mathew07' attempted to disable their own account.
+2026-08-13 12:15:33 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 12:15:49 WARN  o.c.payment.service.UserService - Administrator 'John07' attempted to disable their own account.
+2026-08-13 12:17:40 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 12:17:50 WARN  o.c.payment.service.UserService - Administrator 'John07' attempted to disable their own account.
+2026-08-13 12:44:50 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 12:45:05 INFO  o.c.payment.service.UserService - Administrator 'John07' ENABLED user 'Christofer'.
+2026-08-13 15:07:18 INFO  o.c.p.controller.LoginController - User 'John07' logged in successfully.
+2026-08-13 15:07:37 INFO  o.c.payment.service.UserService - Administrator 'John07' ENABLED user 'Christofer'.
+2026-08-13 15:07:40 ERROR o.c.payment.service.EmailService - Failed to send user status email for user 'Christofer'.
+org.springframework.mail.MailAuthenticationException: Authentication failed
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:402)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:317)
+	at org.springframework.mail.MailSender.send(MailSender.java:42)
+	at org.company.payment.service.EmailService.sendUserStatusChangedEmail(EmailService.java:52)
+	at org.company.payment.service.UserService.toggleUserStatus(UserService.java:134)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at org.company.payment.service.UserService$$SpringCGLIB$$0.toggleUserStatus(<generated>)
+	at org.company.payment.controller.UserPageController.toggleUser(UserPageController.java:156)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-31eb99e2556sm6569384eec.0 - gsmtp
+
+	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769)
+	at jakarta.mail.Service.connect(Service.java:345)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:399)
+	... 50 common frames omitted
+2026-08-13 15:14:13 INFO  o.c.p.controller.LoginController - User 'Mathew07' logged in successfully.
+2026-08-13 15:14:31 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' DISABLED user 'Christofer'.
+2026-08-13 15:14:42 INFO  o.c.payment.service.UserService - Administrator 'Mathew07' ENABLED user 'Christofer'.

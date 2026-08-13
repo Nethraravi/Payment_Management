@@ -6,23 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="de506904-bc6b-4365-86c3-83e8fa476c4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/PaymentPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/PaymentPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/UserPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/controller/UserPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/dto/PaymentRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/dto/PaymentRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/repository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/company/payment/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/company/payment/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create-payment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit-payment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit-payment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/payments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/payments.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,6 +71,12 @@
       <option name="catalinaBase" value="C:\Servers\payment-management-tomcat" />
       <option name="contextPath" value="/payment-management" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map>
+          <entry key="MAIL_PASSWORD" value="zces iura awzl keuq" />
+          <entry key="MAIL_USERNAME" value="nethra161102@gmail.com" />
+        </map>
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
